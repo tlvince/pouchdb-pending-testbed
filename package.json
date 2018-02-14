@@ -1,0 +1,47 @@
+{
+  "name": "pouchdb-pending-testbed",
+  "version": "0.0.0",
+  "description": "Sandbox to test PouchDB/CouchDB replication progress",
+  "main": "index.js",
+  "scripts": {
+    "commitmsg": "validate-commit-msg",
+    "start": "node ./index.js",
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tlvince/pouchdb-pending-testbed.git"
+  },
+  "keywords": [
+    "pouchdb",
+    "pending",
+    "replication",
+    "sync"
+  ],
+  "author": "Tom Vincent <git@tlvince.com> (https://tlvince.com)",
+  "engines": {
+    "npm": ">=5.3",
+    "node": ">=8"
+  },
+  "bugs": {
+    "url": "https://github.com/tlvince/pouchdb-pending-testbed/issues"
+  },
+  "homepage": "https://github.com/tlvince/pouchdb-pending-testbed#readme",
+  "dependencies": {
+    "pouchdb-adapter-http": "6.4.3",
+    "pouchdb-adapter-memory": "6.4.3",
+    "pouchdb-core": "6.4.3",
+    "pouchdb-mapreduce": "6.4.3",
+    "pouchdb-replication": "6.4.3",
+    "progress": "2.0.0"
+  },
+  "devDependencies": {
+    "husky": "0.14.3",
+    "standard": "10.0.3",
+    "validate-commit-msg": "2.14.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "license": "MIT"
+}
