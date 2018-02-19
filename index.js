@@ -15,13 +15,11 @@ const opts = {
 
 const localDb = new PouchDB('local', opts)
 
-const total = 100
-
 const initRemote = async () => {
   const url = 'http://admin:admin@localhost:5984/sync-test'
   await PouchDB(url, opts).destroy()
   const remoteDb = new PouchDB(url)
-  const docs = Array.from(new Array(total), (_, i) => ({ _id: `${i + 1}`} ))
+  const docs = Array.from(new Array(100), (_, i) => ({ _id: `${i + 1}`} ))
   await remoteDb.bulkDocs(docs)
   return remoteDb
 }
@@ -33,6 +31,7 @@ const initRemote = async () => {
     batch_size: 1
   }
 
+  const { doc_count: total } = await remoteDb.info()
   const progressBar = new ProgressBar(':bar pending: :pending', { total })
 
   await localDb.replicate.from(remoteDb, opts)
